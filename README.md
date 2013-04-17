@@ -8,18 +8,18 @@
 * import scalaz.syntax.xyz._ (e.g. import scalaz.syntax.applicative._)
 * import scalaz.syntax.std.xyz._ (e.g. import scalaz.syntax.std.list._)
 
-## Validation and \/
+## ```Validation``` and ```\/```
 * Is not a monad.
 * Use [```EitherT```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/EitherT.scala) rather than ```ValidationT```
 * [```\/```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Either.scala) is Scalaz either
-* ```Validation.disjunction``` converts a validation to a Scalaz either
-* ```Validation.either``` => ```Validation.toEither``` for Scala either
-* ```.left``` and ```.right``` similar to ```.success``` and ```.fail```
+* [```Validation.disjunction```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L312-L317) converts a validation to a Scalaz either
+* ```Validation.either``` => [```Validation.toEither```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L191-L196) for Scala either
+* [```.left```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Either.scala#L382-L384) and [```.right```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Either.scala#L386-L388) similar to [```.success```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L444-L446) and [```.fail```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L448-L450)
 * [```\/.fromTryCatch```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Either.scala#L394-L399) and [```Validation.fromTryCatch```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L452-L457)
-* Validation ```|||``` => [```valueOr```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L206-L211) (||| still exists but the meaning is different)
-* ```ValidationNEL``` => ```ValidationNel```
+* Validation ```|||``` => [```valueOr```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L206-L211) (```|||``` still exists but the meaning is different)
+* ```ValidationNEL``` => [```ValidationNel```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/package.scala#L203)
 
-## Zero
+## ```Zero```
 * No longer exists
 * Use [```Monoid```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Monoid.scala)
 
@@ -29,11 +29,11 @@ type RawBody = Array[Byte]
 implicit val RawBodyMonoid: Monoid[RawBody] = Monoid.instance(_ ++ _, Array[Byte]())
 ```
 
-## MA
+## ```MA```
 * No longer exists
 * ```<|*|>``` => ```tuple``` in [ApplySyntax](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/ApplySyntax.scala#L10)
 
-## IO
+## ```IO```
 * ```scalaz.effects``` => ```scalaz.effect```
 * unsafePerformIO => [```unsafePerformIO()```](https://github.com/scalaz/scalaz/blob/scalaz-seven/effect/src/main/scala/scalaz/effect/IO.scala#L23)
 
