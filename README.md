@@ -21,6 +21,8 @@ import scalaz._
 import Scalaz._
 ```
 
+* Syntax imports provide implicits to work with type classes and functions
+
 * Syntax imports (note: there is also [```scalaz.syntax.all._```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/Syntax.scala#L115))  
 
 ```scala
