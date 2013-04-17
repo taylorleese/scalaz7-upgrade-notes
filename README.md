@@ -10,18 +10,18 @@
 
 ## Validation and \/
 * Is not a monad.
-* Use EitherT rather than ValidationT
-* \/ is Scalaz either
-* Validation.disjunction converts a validation to a Scalaz either
-* Validation.either => Validation.toEither for Scala either
-* .left and .right similar to .success and .fail
-* \/.fromTryCatch and Validation.fromTryCatch are similar validating(...) respectively
-* Validation ||| => valueOr (||| still exists but the meaning is different)
-* ValidationNEL => ValidationNel
+* Use [```EitherT```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/EitherT.scala) rather than ```ValidationT```
+* [```\/```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Either.scala) is Scalaz either
+* ```Validation.disjunction``` converts a validation to a Scalaz either
+* ```Validation.either``` => ```Validation.toEither``` for Scala either
+* ```.left``` and ```.right``` similar to ```.success``` and ```.fail```
+* [```\/.fromTryCatch```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Either.scala#L394-L399) and [```Validation.fromTryCatch```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L452-L457)
+* Validation ```|||``` => [```valueOr```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L206-L211) (||| still exists but the meaning is different)
+* ```ValidationNEL``` => ```ValidationNel```
 
 ## Zero
 * No longer exists
-* Use [Monoid](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Monoid.scala)
+* Use [```Monoid```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Monoid.scala)
 
 ```scala
 // Example from Newman
@@ -31,10 +31,11 @@ implicit val RawBodyMonoid: Monoid[RawBody] = Monoid.instance(_ ++ _, Array[Byte
 
 ## MA
 * No longer exists
-* <|*|> => tuple in [ApplySyntax](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/ApplySyntax.scala#L10)
+* ```<|*|>``` => ```tuple``` in [ApplySyntax](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/ApplySyntax.scala#L10)
 
 ## IO
-* scalaz.effects => scalaz.effect
+* ```scalaz.effects``` => ```scalaz.effect```
+* unsafePerformIO => [```unsafePerformIO()```](https://github.com/scalaz/scalaz/blob/scalaz-seven/effect/src/main/scala/scalaz/effect/IO.scala#L23)
 
 ## lift-json-scalaz
 * Use [lift-json-scalaz7](https://github.com/lift/framework/pull/1424)
