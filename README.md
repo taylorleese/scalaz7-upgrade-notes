@@ -34,7 +34,7 @@ import scalaz.syntax.std.xyz._ // e.g. import scalaz.syntax.std.list._
 ```
 
 ## ```Validation``` and ```\/```
-* Is not a monad.
+* Is not a monad (see the Scalaz thread [here](https://groups.google.com/forum/#!msg/scalaz/IWuHC0nlVws/syRUkXJklWIJ))
 * Use [```EitherT```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/EitherT.scala) rather than ```ValidationT```
 * [```\/```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Either.scala) is Scalaz either
 * [```Validation.disjunction```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Validation.scala#L312-L317) converts a validation to a Scalaz either
