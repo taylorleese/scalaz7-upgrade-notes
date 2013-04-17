@@ -13,11 +13,11 @@ import Scalaz._
 
 * Syntax imports (note: there is also [```scalaz.syntax.all._```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/Syntax.scala#L115))  
 
-```
+```scala
 import scalaz.syntax.xyz._ // e.g. import scalaz.syntax.applicative._
 ```
 
-* Standard library syntax imports (note: there is also [```scalaz.syntax.std.all._```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/std/package.scala#L18) 
+* Standard library syntax imports (note: there is also [```scalaz.syntax.std.all._```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/std/package.scala#L18)) 
 
 ```scala
 import scalaz.syntax.std.xyz._ // e.g. import scalaz.syntax.std.list._
