@@ -14,7 +14,7 @@
 ```
 
 ## Package Structure
-* Generic (note: still valid but it's better to restrict imports to those that you need to prevent conflicts with other libraries)
+* Generic (note: valid but it's better to restrict imports to prevent conflicts with other libraries)
 
 ```scala
 import scalaz._
