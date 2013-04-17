@@ -1,7 +1,17 @@
 # Scalaz 7 Upgrade Notes
 
 ## Dependencies
-* Dependencies are split up
+* Dependencies are more compartmentalized
+
+```scala
+"org.scalaz" %% "scalaz-core" % scalazVersion
+"org.scalaz" %% "scalaz-concurrent" % scalazVersion
+"org.scalaz" %% "scalaz-iteratee" % scalazVersion
+"org.scalaz" %% "scalaz-effect" % scalazVersion
+"org.scalaz" %% "scalaz-iterv" % scalazVersion
+"org.scalaz" %% "scalaz-typelevel" % scalazVersion
+"org.scalaz" %% "scalaz-xml" % scalazVersion
+```
 
 ## Package Structure
 * Generic (note: still valid but it's better to restrict imports to those that you need to prevent conflicts with other libraries)
@@ -50,6 +60,12 @@ implicit val RawBodyMonoid: Monoid[RawBody] = Monoid.instance(_ ++ _, Array[Byte
 
 ## ```IO```
 * ```scalaz.effects``` => ```scalaz.effect```
+* Included in the effect dependency
+
+```scala
+"org.scalaz" %% "scalaz-effect" % scalazVersion
+```
+
 * unsafePerformIO => [```unsafePerformIO()```](https://github.com/scalaz/scalaz/blob/scalaz-seven/effect/src/main/scala/scalaz/effect/IO.scala#L23)
 
 ## lift-json-scalaz
@@ -57,7 +73,7 @@ implicit val RawBodyMonoid: Monoid[RawBody] = Monoid.instance(_ ++ _, Array[Byte
 * Lift version 2.5-RC4+
 
 ```scala
-"net.liftweb" %% "lift-json-scalaz7" % "2.5-RC4"
+"net.liftweb" %% "lift-json-scalaz7" % liftVersion
 ```
 
 ## Upgrade Examples
