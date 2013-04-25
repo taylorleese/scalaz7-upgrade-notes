@@ -56,6 +56,10 @@ type RawBody = Array[Byte]
 implicit val RawBodyMonoid: Monoid[RawBody] = Monoid.instance(_ ++ _, Array[Byte]())
 ```
 
+* No "default" ```Monoid[Boolean]```
+* There is [```Monoid[Boolean @@ Disjunction]```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/std/AnyVal.scala#L68-L87) and [```Monoid[Boolean @@ Conjunction]```](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/std/AnyVal.scala#L89-L108)
+* Easier to use ```Option(xyz) | false``` rather than ```~Option(xyz)``` for simple cases
+
 ## ```MA```
 * No longer exists
 * ```<|*|>``` => ```tuple``` in [ApplySyntax](https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/ApplySyntax.scala#L10)
